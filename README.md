@@ -10,7 +10,7 @@ This app should allow users to create a to-do list to keep track of their tasks.
 ## Task List
 
 - [x] Create a task list
-- [ ] Add necessary files
+- [x] Add necessary files
         - [x] '.gitignore', 'database.sql'
         - [x] Server folder with folders 'public', 'routes' and file 'server.js'
         - [x] Public folder with folders 'scripts', 'styles', 'vendors', 'routes', 

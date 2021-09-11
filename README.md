@@ -11,13 +11,13 @@ This app should allow users to create a to-do list to keep track of their tasks.
 
 - [x] Create a task list
 - [ ] Add necessary files
-        - [ ] '.gitignore', 'database.sql'
-        - [ ] Server folder with folders 'public', 'routes' and file 'server.js'
-        - [ ] Public folder with folders 'scripts', 'styles', 'vendors', 'routes', 
+        - [x] '.gitignore', 'database.sql'
+        - [x] Server folder with folders 'public', 'routes' and file 'server.js'
+        - [x] Public folder with folders 'scripts', 'styles', 'vendors', 'routes', 
                 and file 'index.html'
-        - [ ] In scripts file 'client.js'
-        - [ ] In styles file 'styles.css'
-        - [ ] In vendors 'jquery.js'
+        - [x] In scripts file 'client.js'
+        - [x] In styles file 'styles.css'
+        - [x] In vendors download and add 'jquery.js'
 - [ ] In .gitignore add lines 'node_modules/
                               '.DS_Store'
 - [ ] Install dependencies (npm)

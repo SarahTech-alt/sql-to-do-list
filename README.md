@@ -25,7 +25,7 @@ This app should allow users to create a to-do list to keep track of their tasks.
 - [x] Set up the server (require express, port, app.use, app.listen)
 - [x] Set up the router (const express, const router, module.exports)
 - [x] Add postgres to router/set up the pool
-- [ ] Create a database named 'to-do.sql'
+- [x] Create a database named 'to-do.sql'
 - [ ] Create DOM structure with HTML
         -[ ] Title, section for to-dos to appear, input field and button
 - [ ] Ready DOM in the client, on load get the table from the client and set up 

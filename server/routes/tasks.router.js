@@ -21,15 +21,16 @@ pool.on('error', (error) => {
     console.log('unable to connect to postgresql', error);
 });
 
-router.get('/', (req,res) => {
-    const queryText = 'SELECT * FROM "tasks"';
-    pool.query(queryText).then( (result) => {
-    res.send(results.rows)
+router.get('/', (req, res) => {
+    console.log(req.body);
+    const queryText = 'SELECT * FROM "tasks" LIMIT 100';
+    pool.query(queryText).then((result) => {
+        res.send(result.rows);
     }).catch(error => {
         console.log('There was an error getting the tasks', error);
         res.sendStatus(500);
-    })
-})
+    });
+});
 
 
 

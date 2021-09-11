@@ -18,13 +18,13 @@ This app should allow users to create a to-do list to keep track of their tasks.
         - [x] In scripts file 'client.js'
         - [x] In styles file 'styles.css'
         - [x] In vendors download and add 'jquery.js'
-- [ ] In .gitignore add lines 'node_modules/
+- [x] In .gitignore add lines 'node_modules/
                               '.DS_Store'
-- [ ] Install dependencies (npm)
-- [ ] In package.json file in 'test:' add ',"start":node server/server.js'
-- [ ] Set up the server (require express, port, app.use, app.listen)
-- [ ] Set up the router (const express, const router, module.exports)
-- [ ] Add postgres to router/set up the pool
+- [x] Install dependencies (npm)
+- [x] In package.json file in 'test:' add ',"start":node server/server.js'
+- [x] Set up the server (require express, port, app.use, app.listen)
+- [x] Set up the router (const express, const router, module.exports)
+- [x] Add postgres to router/set up the pool
 - [ ] Create a database named 'to-do.sql'
 - [ ] Create DOM structure with HTML
         -[ ] Title, section for to-dos to appear, input field and button

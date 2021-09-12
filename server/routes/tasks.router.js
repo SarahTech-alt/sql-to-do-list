@@ -23,7 +23,7 @@ pool.on('error', (error) => {
 
 router.get('/', (req, res) => {
     console.log(req.body);
-    const queryText = 'SELECT * FROM "tasks" LIMIT 100';
+    const queryText = 'SELECT * FROM "tasks"  ORDER BY "taskItem" LIMIT 100';
     pool.query(queryText).then((result) => {
         res.send(result.rows);
     }).catch(error => {
@@ -42,17 +42,17 @@ router.put('/:id', (req, res) => {
     })
 })
 
-// router.delete('/:id', (req, res) => { 
-//     console.log(req.params);
-//     const taskId = req.params.id;
-//     const queryText = 'DELETE FROM "tasks" WHERE "id" = $1;'
-//     pool.query(queryText, [taskId]).then((result) => {
-//         res.sendStatus(200);
-//     }).catch((error) => {
-//         console.log('Error in /songs DELETE', error);
-//         res.sendStatus(500);
-//     })
-// });
+router.delete('/:id', (req, res) => { 
+    console.log(req.params);
+    const taskId = req.params.id;
+    const queryText = 'DELETE FROM "tasks" WHERE "id" = $1;'
+    pool.query(queryText, [taskId]).then((result) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log('Error in /songs DELETE', error);
+        res.sendStatus(500);
+    })
+});
 
 
 

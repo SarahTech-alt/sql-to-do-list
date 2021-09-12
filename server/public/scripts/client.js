@@ -17,7 +17,7 @@ function displayTasks() {
         for (tasks of response) {
             $('#task-table').append(`
         <tr>
-        <td>${tasks.taskItem}</td>
+        <td class="taskListed" "done" id="${tasks.id}">${tasks.taskItem}</td>
         <td><input type="checkbox" class="markDone" data-id="${tasks.id}"></td>
         </tr>
         `);
@@ -27,10 +27,12 @@ function displayTasks() {
     })
 }
 
+
+
 // Change status of task to true
 function updateTask() {
-    console.log($(this).data('id'));
     const taskId = $(this).data('id');
+    $(this).parent().parent().toggleClass('done');
     console.log('button was clicked');
     $.ajax({
         method: 'PUT',
@@ -43,3 +45,18 @@ function updateTask() {
         console.log('unable to update');
     })
 }
+
+// // Delete task from table
+// function deleteTask() {
+//     console.log('button was clicked');
+//     $.ajax({
+//         method: 'DELETE',
+//         url: `/tasks/${taskId}`
+//     }).then(function(response) {
+//         console.log(response);
+//         console.log('Item was deleted');
+//     }).catch(function(error){
+//         console.log('unable to update');
+//     })
+//     displayTasks();
+//}

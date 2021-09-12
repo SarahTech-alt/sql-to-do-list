@@ -1,9 +1,12 @@
 body {
     background-color: bisque;
+    font-family: 'Urbanist', sans-serif;
 }
 
 
 
 .done {
     text-decoration: line-through;
+    color: tomato;
 }
+

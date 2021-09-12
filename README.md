@@ -29,11 +29,9 @@ This app should allow users to create a to-do list to keep track of their tasks.
 - [x] Create DOM structure with HTML
         -[x] Title, section for to-dos to appear, input field and button
 - [x] Source in files
-- [ ] Ready DOM in the client, on load get the table from the database and set up 
-      click handler for adding task
-- [ ] Clear table from DOM, GET table from the database with a SELECT query, and 
-       append the results to the DOM and add a done button with data-id 
-- [ ]  When 'add' button is clicked POST to the server, INSERT into database, step 
-       back into GET function to append the updated table
-- [ ]  When 'done' button is clicked send PUT request with button id to the server 
-       to DELETE from the database, step back into the GET function to append updated table
+- [x] Ready DOM in the client, on load get the table from the database and set up click handler for adding task
+- [x] Clear table from DOM, GET table from the database with a SELECT query, and append the results to the DOM and add a done button with data-id 
+- [x]  When 'add' button is clicked POST to the server, INSERT into database, step back into GET function to append the updated table
+- [x]  When 'done' button is clicked send PUT request with button id to the server to DELETE from the database, step back into the GET function to append updated table
+-[x] Add new font
+-[x] Change the appearance of a task once it is done by adding CSS class

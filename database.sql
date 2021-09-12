@@ -12,7 +12,3 @@ VALUES
     ('fix the chair',false),
     ('dust the hall',false);
 
-    CREATE TABLE markedDone (
-	"id" SERIAL,
-	"taskItem" varchar(500),
-	"status" boolean);

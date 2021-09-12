@@ -11,9 +11,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 let tasksRouter = require('./routes/tasks.router');
 app.use('/tasks', tasksRouter);
 
+var pool = (require('./modules/pool.js'));
+
 
 // Start express
 const PORT = 5000;
+process.env.PORT || 5000;
+
 app.listen(PORT, () => {
     console.log('up and running on port', PORT);
 })

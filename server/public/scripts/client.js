@@ -114,6 +114,7 @@ function addTask() {
         // if unsuccesfful log an error message
         console.log('There was an error adding task!');
     });
+    // clear input field  
     $('#add-task').val('');
     displayTasks();
 }

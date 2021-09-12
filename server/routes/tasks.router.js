@@ -42,17 +42,33 @@ router.put('/:id', (req, res) => {
     })
 })
 
-// router.delete('/:id', (req, res) => { 
-//     console.log(req.params);
-//     const taskId = req.params.id;
-//     const queryText = 'DELETE FROM "tasks" WHERE "id" = $1;'
-//     pool.query(queryText, [taskId]).then((result) => {
-//         res.sendStatus(200);
-//     }).catch((error) => {
-//         console.log('Error in /songs DELETE', error);
-//         res.sendStatus(500);
-//     })
-// });
+router.delete('/:id', (req, res) => { 
+    console.log(req.params);
+    const taskId = req.params.id;
+    const queryText = 'DELETE FROM "tasks" WHERE "id" = $1;'
+    pool.query(queryText, [taskId]).then((result) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log('Error in /songs DELETE', error);
+        res.sendStatus(500);
+    })
+});
+
+router.post('/', (req, res) => {
+    // get the task from the client from data sent
+    const taskToAdd = req.body;
+    // write query to send to db with sanitized data
+    const queryText = 'INSERT INTO "tasks" ("taskItem","status") VALUES ($1,$2);';
+    // send query to database
+    pool.query(queryText,
+        [taskToAdd.taskItem,
+        taskToAdd.status]).then((result) => {
+            res.sendStatus(200)
+        }).catch((error) => {
+            res.sendStatus(500)
+        })
+});
+
 
 
 

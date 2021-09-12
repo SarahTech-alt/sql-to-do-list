@@ -46,17 +46,41 @@ function updateTask() {
     })
 }
 
-// // Delete task from table
-// function deleteTask() {
-//     console.log('button was clicked');
-//     $.ajax({
-//         method: 'DELETE',
-//         url: `/tasks/${taskId}`
-//     }).then(function(response) {
-//         console.log(response);
-//         console.log('Item was deleted');
-//     }).catch(function(error){
-//         console.log('unable to update');
-//     })
-//     displayTasks();
-//}
+// Delete task from table
+function deleteTask() {
+    const taskId = $(this).data('id');
+    console.log('button was clicked');
+    $.ajax({
+        method: 'DELETE',
+        url: `/tasks/${taskId}`
+    }).then(function(response) {
+        console.log(response);
+        console.log('Item was deleted');
+    }).catch(function(error){
+        console.log('unable to update');
+    })
+    displayTasks();
+}
+
+// When 'add button' is clicked get user input and insert into
+// database with a PST method
+function addTask(){
+    console.log('In add task');
+    //get user input
+    const taskToAdd = {
+        taskItem: $('#add-task').val(),
+        status: false
+    }
+    // send to server
+    $.ajax({
+        method: 'POST',
+        url: '/tasks',
+        data: taskToAdd
+    }).then(function(response) {
+        // if successful log success message
+        console.log('Success in adding task!');
+    }).catch(funciton(error) {
+        // if unsuccesfful log an error message
+        console.log('There was an error adding task!');
+    })
+}

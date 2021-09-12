@@ -16,14 +16,23 @@ function displayTasks() {
     }).then(function (response) {
         console.log(response);
         $('#task-table').empty();
-        for (tasks of response) {
-            $('#task-table').append(`
+        for (const tasks of response) {
+        // for each task of the response
+        const taskId = tasks.id;
+        // add tasks to the DOM with data attribute
+        // to be set to unique id
+        $('#task-table').append(`
         <tr>
-        <td class="taskListed" "done" id="${tasks.id}">${tasks.taskItem}</td>
-        <td><input type="checkbox" class="markDone" data-id="${tasks.id}"></td>
-        <td><button class="delete-button" data-id="${tasks.id}">Delete</button></td>
+        <td class="taskListed" id="${taskId}">${tasks.taskItem}</td>
+        <td><input type="checkbox" class="markDone" data-id="${taskId}"></td>
+        <td><button class="delete-button" data-id="${taskId}">Delete</button></td>
         </tr>
         `);
+        if (tasks.status === true) {
+            // if the id attribute of task is true
+            // add class 'done' to task list
+            $(`#${taskId}`).addClass('done');
+        }
         }
     }).catch(function (error) {
         alert('there was an error displaying tasks', error);
@@ -35,7 +44,7 @@ function displayTasks() {
 function updateTask() {
     const taskId = $(this).data('id');
     // add strikethrough to task text when checkbox clicked
-    $(this).parent().parent().toggleClass('done');
+    //$(this).parent().parent().toggleClass('done');
     console.log('button was clicked');
     $.ajax({
         method: 'PUT',
@@ -45,6 +54,7 @@ function updateTask() {
     }).catch(function(error){
         console.log('unable to update');
     })
+    displayTasks();
 }
 
 // Delete task from table

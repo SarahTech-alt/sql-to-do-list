@@ -23,7 +23,7 @@ pool.on('error', (error) => {
 
 router.get('/', (req, res) => {
     console.log(req.body);
-    const queryText = 'SELECT * FROM "tasks" LIMIT 100';
+    const queryText = 'SELECT * FROM "tasks"  ORDER BY "taskItem" LIMIT 100';
     pool.query(queryText).then((result) => {
         res.send(result.rows);
     }).catch(error => {

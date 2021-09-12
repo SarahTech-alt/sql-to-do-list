@@ -11,7 +11,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 let tasksRouter = require('./routes/tasks.router');
 app.use('/tasks', tasksRouter);
 
-var pool = (require('./modules/pool.js'));
 
 
 // Start express

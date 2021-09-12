@@ -21,6 +21,9 @@ pool.on('error', (error) => {
     console.log('unable to connect to postgresql', error);
 });
 
+// Get all the items from database 'to-do' and table 'task'
+// Order alphabetically and send back to client
+
 router.get('/', (req, res) => {
     console.log(req.body);
     const queryText = 'SELECT * FROM "tasks"  ORDER BY "taskItem" LIMIT 100';
@@ -32,9 +35,11 @@ router.get('/', (req, res) => {
     });
 });
 
+// Accessed by id provided by the client
+// Switches the status boolean of the task with corresponding id
 router.put('/:id', (req, res) => {
     const taskId = req.params.id;
-    const queryText = 'UPDATE "tasks" SET "status" = true WHERE "id" = $1;'
+    const queryText = 'UPDATE "tasks" SET "status" = NOT "status" WHERE id = $1;';
     pool.query(queryText, [taskId]).then((result) => {
         res.sendStatus(200);
     }).catch((error) => {
@@ -42,7 +47,9 @@ router.put('/:id', (req, res) => {
     })
 })
 
-router.delete('/:id', (req, res) => { 
+// Accessed by id provided by the client
+// Deletes the item of the task with corresponding id
+router.delete('/:id', (req, res) => {
     console.log(req.params);
     const taskId = req.params.id;
     const queryText = 'DELETE FROM "tasks" WHERE "id" = $1;'
@@ -54,6 +61,8 @@ router.delete('/:id', (req, res) => {
     })
 });
 
+// Gets the value of the input field from the client
+// Adds to 'task' table with a default status of false
 router.post('/', (req, res) => {
     // get the task from the client from data sent
     const taskToAdd = req.body;

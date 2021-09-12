@@ -6,6 +6,7 @@ function onReady() {
     displayTasks();
     $('#task-table').on('click','.markDone',updateTask);
     $('#task-table').on('click','.delete-button',deleteTask);
+    $('#add-button').on('click', addTask);
 }
 
 function displayTasks() {
@@ -79,8 +80,9 @@ function addTask(){
     }).then(function(response) {
         // if successful log success message
         console.log('Success in adding task!');
-    }).catch(funciton(error) {
+    }).catch(function(error) {
         // if unsuccesfful log an error message
         console.log('There was an error adding task!');
-    })
+    });
+    displayTasks();
 }

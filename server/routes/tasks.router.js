@@ -32,6 +32,27 @@ router.get('/', (req, res) => {
     });
 });
 
+router.put('/:id', (req, res) => {
+    const taskId = req.params.id;
+    const queryText = 'UPDATE "tasks" SET "status" = true WHERE "id" = $1;'
+    pool.query(queryText, [taskId]).then((result) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        res.sendStatus(200);
+    })
+})
+
+// router.delete('/:id', (req, res) => { 
+//     console.log(req.params);
+//     const taskId = req.params.id;
+//     const queryText = 'DELETE FROM "tasks" WHERE "id" = $1;'
+//     pool.query(queryText, [taskId]).then((result) => {
+//         res.sendStatus(200);
+//     }).catch((error) => {
+//         console.log('Error in /songs DELETE', error);
+//         res.sendStatus(500);
+//     })
+// });
 
 
 

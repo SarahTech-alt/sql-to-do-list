@@ -1,0 +1,11 @@
+body {
+    background-color: bisque;
+}
+
+.markDone {
+   text-decoration: line-through;
+}
+
+.done {
+    text-decoration: line-through;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:5000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <script src="./To-Do App_files/jquery.js" charset="utf-8"></script>
+    <script src="./To-Do App_files/client.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="./To-Do App_files/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./To-Do App_files/css2" rel="stylesheet">
+    
+</head>
+
+<body>
+    <h1>Things To Do</h1>
+    <hr>
+    <table id="task-section">
+        <thead>
+            <tr>
+            </tr>
+        </thead>
+        <tbody id="task-table">
+                 <tr>
+                <td class="taskListed" id="63">Buy pet food</td>
+                <td><input type="checkbox" class="markDone" data-id="63"></td>
+                 <td><button class="delete-button" data-id="63">Delete</button></td>
+                </tr>
+                 
+                 <tr>
+                <td class="taskListed" id="66">Mend shirt</td>
+                <td><input type="checkbox" class="markDone" data-id="66"></td>
+                 <td><button class="delete-button" data-id="66">Delete</button></td>
+                </tr>
+                 
+                 <tr>
+                <td class="taskListed" id="65">Sweep floors</td>
+                <td><input type="checkbox" class="markDone" data-id="65"></td>
+                 <td><button class="delete-button" data-id="65">Delete</button></td>
+                </tr>
+                 </tbody>
+    </table>
+    <br>
+    <div id="new-task">
+        <input id="add-task" placeholder="New Task">
+        <button id="add-button">Add</button>
+    </div>
+    <br>
+    <table id="completed-section">
+        <thead>
+            <tr>
+            </tr>
+        </thead>
+        <tbody id="completed-table">
+                <tr>
+                <td class="taskListed done" id="64">Wash dishes</td>
+                <td><button class="undo" data-id="64">Undo</button></td>
+                <td><button class="delete-button" data-id="64">Delete</button></td>
+                </tr>
+                </tbody>
+
+
+
+</table></body></html>

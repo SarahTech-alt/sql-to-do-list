@@ -1,0 +1,13 @@
+body {
+    background-color: bisque;
+    font-family: 'Urbanist', sans-serif;
+    max-width: 80%;
+}
+
+
+
+.done {
+    text-decoration: line-through;
+    color: tomato;
+}
+

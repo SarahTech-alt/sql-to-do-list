@@ -70,10 +70,10 @@ function updateTask() {
         url: `/tasks/${taskId}`
     }).then(function (response) {
         console.log('Item was updated');
+        displayTasks();
     }).catch(function (error) {
         console.log('unable to update');
     })
-    displayTasks();
 }
 
 // Delete task from table
@@ -87,10 +87,10 @@ function deleteTask() {
     }).then(function (response) {
         console.log(response);
         console.log('Item was deleted');
+        displayTasks();
     }).catch(function (error) {
         console.log('unable to update');
     })
-    displayTasks();
 }
 
 // When 'add button' is clicked get user input and insert into
@@ -110,13 +110,13 @@ function addTask() {
     }).then(function (response) {
         // if successful log success message
         console.log('Success in adding task!');
+        displayTasks();
     }).catch(function (error) {
         // if unsuccesfful log an error message
         console.log('There was an error adding task!');
     });
     // clear input field  
     $('#add-task').val('');
-    displayTasks();
 }
 
 // When undo button is clicked send to server to switch the status 

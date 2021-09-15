@@ -1,7 +1,7 @@
 CREATE TABLE tasks (
-	"id" SERIAL,
+	"id" SERIAL PRIMARY KEY,
 	"taskItem" varchar(500),
-	"status" boolean);
+	"status" boolean DEFAULT FALSE);
 
 INSERT into "tasks"
     ("taskItem", "status")
@@ -11,4 +11,4 @@ VALUES
     ('water the plants', false),
     ('fix the chair',false),
     ('dust the hall',false);
-
+    
